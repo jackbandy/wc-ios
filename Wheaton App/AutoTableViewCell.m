@@ -7,6 +7,7 @@
 //
 
 #import "AutoTableViewCell.h"
+#import <PureLayout/PureLayout.h>
 
 #define kLabelHorizontalInsets      15.0f
 #define kLabelVerticalInsets        10.0f

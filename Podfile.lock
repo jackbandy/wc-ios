@@ -22,27 +22,29 @@ PODS:
     - AFNetworking/NSURLSession
   - iOS-blur (0.0.5)
   - LVDebounce (0.0.4)
-  - Mixpanel (2.5.3)
+  - Mixpanel (2.5.4)
+  - PureLayout (3.0.2)
   - Reachability (3.1.1)
-  - TEAChart (0.1)
-  - UIView+AutoLayout (2.0.1)
+  - TEAChart (0.3.2)
 
 DEPENDENCIES:
-  - AFNetworking
-  - iOS-blur
-  - LVDebounce
-  - Mixpanel
-  - Reachability
-  - TEAChart
-  - UIView+AutoLayout
+  - AFNetworking (~> 2.6.3)
+  - iOS-blur (~> 0.0.5)
+  - LVDebounce (~> 0.0.4)
+  - Mixpanel (~> 2.5.3)
+  - PureLayout
+  - Reachability (~> 3.1.1)
+  - TEAChart (~> 0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   iOS-blur: 8e4a4a2202b881e940869eca0c957808cbdf0a19
   LVDebounce: 166cf3e2215e74a1aae42902df15701f9c31d34f
-  Mixpanel: aa00f018105f67563bc17b2b17f494c9fc672713
+  Mixpanel: 61f3f69428ec1f4c32245392471ccc2292c05e32
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
-  TEAChart: 94e780962cb9a9a617bc8b4b64beeb6a8ab50e4d
-  UIView+AutoLayout: 9eb76d5e72974e5b96c0350624d8f17ddb405ee0
+  TEAChart: b22170216cc5e97a9e32da46f5ca06c07ef43cd0
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 91cdcf62548ceb780785b2728765498ecd638a42
+
+COCOAPODS: 1.0.0

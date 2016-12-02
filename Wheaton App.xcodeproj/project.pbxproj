@@ -79,7 +79,7 @@
 		6D43A2C11B645AF0007BD0F2 /* SWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D43A2C01B645AF0007BD0F2 /* SWebViewController.swift */; };
 		6DDED5F11B44B1B2002B03BC /* RecordArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDED5F01B44B1B2002B03BC /* RecordArticlesViewController.swift */; };
 		6DDED5F31B44B37A002B03BC /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDED5F21B44B37A002B03BC /* XMLParser.swift */; };
-		CCF1BF0EAA79491DB3D20327 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E273835E92EF424EA47D036B /* libPods.a */; };
+		8FD3CD09BD7885ECC8C658A2 /* libPods-Wheaton-Wheaton App.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C56C6F7E888264A430AA3DF8 /* libPods-Wheaton-Wheaton App.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,7 +98,6 @@
 		2D26540513E069D000DE089C /* Wheaton_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wheaton_AppTests.m; sourceTree = "<group>"; };
 		2D26546E13E0AA7E00DE089C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2DCEB34413E2010A00787E39 /* LinksList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LinksList.plist; path = "Wheaton App.xcodeproj/LinksList.plist"; sourceTree = SOURCE_ROOT; };
-		47D7D882DD8EBCA04662A82E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		574EF7341C19019300E80B33 /* GSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeychain.h; sourceTree = "<group>"; };
 		574EF7351C19019300E80B33 /* GSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSKeychain.m; sourceTree = "<group>"; };
 		574EF7371C1901C800E80B33 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -205,9 +204,10 @@
 		6D43A2C01B645AF0007BD0F2 /* SWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWebViewController.swift; sourceTree = "<group>"; };
 		6DDED5F01B44B1B2002B03BC /* RecordArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordArticlesViewController.swift; sourceTree = "<group>"; };
 		6DDED5F21B44B37A002B03BC /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
-		8488F3B27992B7FC65559241 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		CE368ECDC5DCD333A3D29340 /* Pods.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.distribution.xcconfig; path = "Pods/Target Support Files/Pods/Pods.distribution.xcconfig"; sourceTree = "<group>"; };
-		E273835E92EF424EA47D036B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		98C22ECB72BA77E34774214D /* Pods-Wheaton-Wheaton App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheaton-Wheaton App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wheaton-Wheaton App/Pods-Wheaton-Wheaton App.release.xcconfig"; sourceTree = "<group>"; };
+		AD54A2CFCD2CD888778765BD /* Pods-Wheaton-Wheaton App.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheaton-Wheaton App.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-Wheaton-Wheaton App/Pods-Wheaton-Wheaton App.distribution.xcconfig"; sourceTree = "<group>"; };
+		C56C6F7E888264A430AA3DF8 /* libPods-Wheaton-Wheaton App.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Wheaton-Wheaton App.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB727BF63967C7F25261A931 /* Pods-Wheaton-Wheaton App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wheaton-Wheaton App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wheaton-Wheaton App/Pods-Wheaton-Wheaton App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,7 +230,7 @@
 				2D2653DD13E069CF00DE089C /* UIKit.framework in Frameworks */,
 				2D2653DF13E069CF00DE089C /* Foundation.framework in Frameworks */,
 				2D2653E113E069CF00DE089C /* CoreGraphics.framework in Frameworks */,
-				CCF1BF0EAA79491DB3D20327 /* libPods.a in Frameworks */,
+				8FD3CD09BD7885ECC8C658A2 /* libPods-Wheaton-Wheaton App.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +244,7 @@
 				2D2653FC13E069D000DE089C /* Wheaton AppTests */,
 				2D2653DB13E069CF00DE089C /* Frameworks */,
 				2D2653D913E069CF00DE089C /* Products */,
-				F5A62C627D748D24CECDE697 /* Pods */,
+				E55CB66348F96B6D3525354D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,7 +274,7 @@
 				2D2653DC13E069CF00DE089C /* UIKit.framework */,
 				2D2653DE13E069CF00DE089C /* Foundation.framework */,
 				2D2653E013E069CF00DE089C /* CoreGraphics.framework */,
-				E273835E92EF424EA47D036B /* libPods.a */,
+				C56C6F7E888264A430AA3DF8 /* libPods-Wheaton-Wheaton App.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -517,7 +517,6 @@
 		61CA409C17CA6C6300617623 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				61CE5FC4188359D1007B66AB /* Pods */,
 				613E6CF218E4BF1100445FFE /* Generic */,
 				613E6CEE18E4BEB500445FFE /* Events */,
 				613E6CEF18E4BEC400445FFE /* Map */,
@@ -566,13 +565,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		61CE5FC4188359D1007B66AB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		61E075C917E6A88A0029EFE9 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,12 +574,12 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
-		F5A62C627D748D24CECDE697 /* Pods */ = {
+		E55CB66348F96B6D3525354D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8488F3B27992B7FC65559241 /* Pods.debug.xcconfig */,
-				47D7D882DD8EBCA04662A82E /* Pods.release.xcconfig */,
-				CE368ECDC5DCD333A3D29340 /* Pods.distribution.xcconfig */,
+				EB727BF63967C7F25261A931 /* Pods-Wheaton-Wheaton App.debug.xcconfig */,
+				98C22ECB72BA77E34774214D /* Pods-Wheaton-Wheaton App.release.xcconfig */,
+				AD54A2CFCD2CD888778765BD /* Pods-Wheaton-Wheaton App.distribution.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -599,12 +591,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D26540913E069D000DE089C /* Build configuration list for PBXNativeTarget "Wheaton App" */;
 			buildPhases = (
-				26C3C3E424CC480BAB8B4B66 /* Check Pods Manifest.lock */,
+				76C1CDDCA7315AA8609E40A2 /* 📦 Check Pods Manifest.lock */,
 				2D2653D413E069CF00DE089C /* Sources */,
 				2D2653D513E069CF00DE089C /* Frameworks */,
 				2D2653D613E069CF00DE089C /* Resources */,
-				D6D45BB48F864478AA7FF89C /* Copy Pods Resources */,
-				44B6C943B4295B7D00A62AF0 /* Embed Pods Frameworks */,
+				C9A033EBEAC970E6447F4422 /* 📦 Embed Pods Frameworks */,
+				7F237AFACEDCA4FF4229B39A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -675,14 +667,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26C3C3E424CC480BAB8B4B66 /* Check Pods Manifest.lock */ = {
+		76C1CDDCA7315AA8609E40A2 /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -690,34 +682,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		44B6C943B4295B7D00A62AF0 /* Embed Pods Frameworks */ = {
+		7F237AFACEDCA4FF4229B39A /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wheaton-Wheaton App/Pods-Wheaton-Wheaton App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D6D45BB48F864478AA7FF89C /* Copy Pods Resources */ = {
+		C9A033EBEAC970E6447F4422 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wheaton-Wheaton App/Pods-Wheaton-Wheaton App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -809,7 +801,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36CFBE60-0069-440C-BBA9-6746397C1150";
@@ -828,7 +820,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
@@ -839,7 +831,7 @@
 		};
 		2D26540A13E069D000DE089C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8488F3B27992B7FC65559241 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = EB727BF63967C7F25261A931 /* Pods-Wheaton-Wheaton App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -863,7 +855,10 @@
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.wheaton.wcapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -877,7 +872,7 @@
 		};
 		2D26540B13E069D000DE089C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47D7D882DD8EBCA04662A82E /* Pods.release.xcconfig */;
+			baseConfigurationReference = 98C22ECB72BA77E34774214D /* Pods-Wheaton-Wheaton App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -899,7 +894,10 @@
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.wheaton.wcapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -921,7 +919,7 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
@@ -932,7 +930,7 @@
 		};
 		62AADA3A13F983E7001BC0DA /* Distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE368ECDC5DCD333A3D29340 /* Pods.distribution.xcconfig */;
+			baseConfigurationReference = AD54A2CFCD2CD888778765BD /* Pods-Wheaton-Wheaton App.distribution.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -954,7 +952,10 @@
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.wheaton.wcapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

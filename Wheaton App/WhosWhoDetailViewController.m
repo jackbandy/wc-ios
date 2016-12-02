@@ -7,6 +7,7 @@
 //
 
 #import "WhosWhoDetailViewController.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface WhosWhoDetailViewController ()
 
