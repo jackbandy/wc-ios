@@ -30,6 +30,14 @@
     mealMenu.url = [NSURL URLWithString:c_Menu];
     mealMenu.allowResize = NO;
     self.delegate = self;
+
+#ifdef DEBUG
+    // Simulator screenshots: `xcrun simctl launch booted <bundle id> -AWInitialTab 2`
+    NSInteger initialTab = [[NSUserDefaults standardUserDefaults] integerForKey:@"AWInitialTab"];
+    if (initialTab > 0 && initialTab < (NSInteger)self.viewControllers.count) {
+        self.selectedIndex = initialTab;
+    }
+#endif
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController

@@ -6,3 +6,7 @@ Wheaton\ App.app
 Wheaton\ App.app/*/**
 Wheaton\ App.xarchive
 Pods/**/*
+xcuserdata/
+*.ipa
+*.xcarchive
+DerivedData/

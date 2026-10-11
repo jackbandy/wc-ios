@@ -24,7 +24,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        self.bodyLabel = [UILabel newAutoLayoutView];
+        self.bodyLabel = [[UILabel alloc] init];
+        self.bodyLabel.translatesAutoresizingMaskIntoConstraints = NO;
         [self.bodyLabel setLineBreakMode:NSLineBreakByTruncatingTail];
         [self.bodyLabel setNumberOfLines:0];
         [self.bodyLabel setTextAlignment:NSTextAlignmentLeft];
@@ -51,10 +52,10 @@
     // self.contentView.bounds = CGRectMake(0.0f, 0.0f, 99999.0f, 99999.0f);
     
     [self.bodyLabel setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-    [self.bodyLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kLabelVerticalInsets];
-    [self.bodyLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:kLabelHorizontalInsets];
-    [self.bodyLabel autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:kLabelHorizontalInsets];
-    [self.bodyLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kLabelVerticalInsets];
+    [self.bodyLabel.topAnchor constraintEqualToAnchor:self.bodyLabel.superview.topAnchor constant:kLabelVerticalInsets].active = YES;
+    [self.bodyLabel.leadingAnchor constraintEqualToAnchor:self.bodyLabel.superview.leadingAnchor constant:kLabelHorizontalInsets].active = YES;
+    [self.bodyLabel.trailingAnchor constraintEqualToAnchor:self.bodyLabel.superview.trailingAnchor constant:-kLabelHorizontalInsets].active = YES;
+    [self.bodyLabel.bottomAnchor constraintEqualToAnchor:self.bodyLabel.superview.bottomAnchor constant:-kLabelVerticalInsets].active = YES;
     
     self.didSetupConstraints = YES;
 }

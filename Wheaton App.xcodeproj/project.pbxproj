@@ -7,20 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D2653DD13E069CF00DE089C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2653DC13E069CF00DE089C /* UIKit.framework */; };
-		2D2653DF13E069CF00DE089C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2653DE13E069CF00DE089C /* Foundation.framework */; };
-		2D2653E113E069CF00DE089C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D2653E013E069CF00DE089C /* CoreGraphics.framework */; };
 		2D2653E713E069CF00DE089C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D2653E513E069CF00DE089C /* InfoPlist.strings */; };
 		2D2653EA13E069CF00DE089C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2653E913E069CF00DE089C /* main.m */; };
-		2D26546F13E0AA7E00DE089C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D26546E13E0AA7E00DE089C /* MapKit.framework */; };
 		2DCEB34513E2010A00787E39 /* LinksList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2DCEB34413E2010A00787E39 /* LinksList.plist */; };
-		574EF7361C19019300E80B33 /* GSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 574EF7351C19019300E80B33 /* GSKeychain.m */; };
-		574EF7381C1901C800E80B33 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 574EF7371C1901C800E80B33 /* Security.framework */; };
 		577724801C3D89FD00DB6775 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613E6CF418E4BF5F00445FFE /* Media.xcassets */; };
 		61032B0C17F112B900CC95FA /* EventSingleLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61032B0B17F112B900CC95FA /* EventSingleLineView.xib */; };
 		61032B0E17F1157B00CC95FA /* EventSubtitleLineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61032B0D17F1157B00CC95FA /* EventSubtitleLineView.xib */; };
-		61032B1917F3324200CC95FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61032B1817F3324200CC95FA /* CoreData.framework */; };
-		61032B1B17F3325600CC95FA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 61032B1A17F3325600CC95FA /* libz.dylib */; };
 		610D48D217DD591F00DE574C /* EventsTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 610D48D117DD591F00DE574C /* EventsTableCell.m */; };
 		610E251519D1CA8B009168AA /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 610E251419D1CA8B009168AA /* Utilities.m */; };
 		612BFEFD17DED11300EB2C8C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BFEF517DED11200EB2C8C /* AppDelegate.m */; };
@@ -29,8 +21,6 @@
 		613B9557183419C900DEAA0E /* EventsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613B9556183419C900DEAA0E /* EventsTableViewController.m */; };
 		613CF94718D8D737005156A8 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94618D8D737005156A8 /* Course.m */; };
 		613CF94A18D8D882005156A8 /* CourseRequirement.m in Sources */ = {isa = PBXBuildFile; fileRef = 613CF94918D8D882005156A8 /* CourseRequirement.m */; };
-		613CF99218DB79A3005156A8 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613CF99118DB79A3005156A8 /* EventKit.framework */; };
-		6141152E18374F7E00B71051 /* PushNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 6141152D18374F7E00B71051 /* PushNotification.m */; };
 		6147B49418AD531A00110753 /* AutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6147B49318AD531A00110753 /* AutoTableViewCell.m */; };
 		615CA71D18DCE7E50002279F /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615CA71C18DCE7E50002279F /* CustomTableViewController.m */; };
 		616DD2591852AB7E00AC53C3 /* WhoswhoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 616DD2581852AB7E00AC53C3 /* WhoswhoTableCell.xib */; };
@@ -38,24 +28,15 @@
 		61851B3B18306529005EDE18 /* EventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3A18306529005EDE18 /* EventViewController.m */; };
 		61851B3E18306762005EDE18 /* SportsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61851B3D18306762005EDE18 /* SportsTableViewController.m */; };
 		61891CD2182C09EE003F1B43 /* MasterTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61891CD0182C09EE003F1B43 /* MasterTabViewController.m */; };
-		61B04AFB18B4605600CC509A /* NotificationOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B04AFA18B4605600CC509A /* NotificationOptionsTableViewController.m */; };
-		61B04AFE18B5C90C00CC509A /* BannerLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B04AFD18B5C90C00CC509A /* BannerLoginViewController.m */; };
 		61B04B0918B8728800CC509A /* MetraTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61B04B0718B8728800CC509A /* MetraTableViewCell.m */; };
 		61B04B0A18B8728800CC509A /* MetraTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61B04B0818B8728800CC509A /* MetraTableViewCell.xib */; };
-		61B3FCB418E92A95009F58CD /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B3FCB318E92A95009F58CD /* CoreBluetooth.framework */; };
 		61BCE1041885E18600C7AB12 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 61BCE1031885E18600C7AB12 /* Constants.m */; };
 		61CA40AD17CA702200617623 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61CA40AC17CA702200617623 /* iPhone.storyboard */; };
-		61CA40BC17CA798100617623 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40BB17CA798100617623 /* Twitter.framework */; };
-		61CA40BE17CA799F00617623 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40BD17CA799F00617623 /* CoreLocation.framework */; };
-		61CA40C317CA8CBB00617623 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40C217CA8CBB00617623 /* Social.framework */; };
 		61CA40CA17CA94FB00617623 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CA40C917CA94FA00617623 /* Location.m */; };
-		61CA40CC17CA952000617623 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61CA40CB17CA951F00617623 /* AddressBook.framework */; };
 		61CE5FC5188359D1007B66AB /* HomePastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61CE5FC3188359D1007B66AB /* HomePastViewController.m */; };
 		61DDA64D18368F8B00EBA92C /* AcademicTableViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */; };
 		61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */; };
 		61DE4FFB183020AA004BBCA1 /* CustomSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DE4FFA183020AA004BBCA1 /* CustomSegmentControl.m */; };
-		61E075C817E6A7790029EFE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61E075C717E6A7790029EFE9 /* SystemConfiguration.framework */; };
-		61E075CF17E6A9850029EFE9 /* MTReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E075CE17E6A9850029EFE9 /* MTReachabilityManager.m */; };
 		61E2E91B187F236800E97AD7 /* WhosWhoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E2E91A187F236800E97AD7 /* WhosWhoDetailViewController.m */; };
 		61E4077017CC5B7B0068AE00 /* EventTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4076F17CC5B7B0068AE00 /* EventTableCell.m */; };
 		61E4077617CEB9340068AE00 /* WhoswhoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E4077517CEB9330068AE00 /* WhoswhoTableCell.m */; };
@@ -65,7 +46,6 @@
 		61E68D1B185D5566009F0977 /* Sport.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E68D1A185D5566009F0977 /* Sport.m */; };
 		61E7679318F4F67200E04D54 /* AccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E7679218F4F67200E04D54 /* AccountTableViewCell.m */; };
 		61E89E12188F7C89002F6241 /* EventAutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E89E10188F7C89002F6241 /* EventAutoTableViewCell.m */; };
-		61F05EDE17D3A4100006CC1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61F05EDD17D3A4100006CC1F /* QuartzCore.framework */; };
 		61F6E4DF18E618E300E95093 /* CourseTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F6E4DD18E618E300E95093 /* CourseTableCell.m */; };
 		61F6E4E018E618E300E95093 /* CourseTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61F6E4DE18E618E300E95093 /* CourseTableCell.xib */; };
 		61F70D7E18309AA000345907 /* SportTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F70D7D18309AA000345907 /* SportTableCell.m */; };
@@ -76,17 +56,13 @@
 		61F70D8F1831E03700345907 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F70D8E1831E03700345907 /* HomeViewController.m */; };
 		61F70D921831F12700345907 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 61F70D911831F12700345907 /* Person.m */; };
 		6D2A5FD51B41F8CD00CD3285 /* chapelNEW.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 6D2A5FD41B41F8CD00CD3285 /* chapelNEW.pdf */; };
-		6D43A2C11B645AF0007BD0F2 /* SWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D43A2C01B645AF0007BD0F2 /* SWebViewController.swift */; };
 		6DDED5F11B44B1B2002B03BC /* RecordArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDED5F01B44B1B2002B03BC /* RecordArticlesViewController.swift */; };
 		6DDED5F31B44B37A002B03BC /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DDED5F21B44B37A002B03BC /* XMLParser.swift */; };
-		CCF1BF0EAA79491DB3D20327 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E273835E92EF424EA47D036B /* libPods.a */; };
+		E31BD61B6D4A864BC0723FF7 /* whoswho.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CB62AD6150E31D48782E749 /* whoswho.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D2653D813E069CF00DE089C /* Wheaton App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wheaton App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D2653DC13E069CF00DE089C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2D2653DE13E069CF00DE089C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2D2653E013E069CF00DE089C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2D2653E413E069CF00DE089C /* Wheaton App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Wheaton App-Info.plist"; sourceTree = "<group>"; };
 		2D2653E613E069CF00DE089C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2D2653E813E069CF00DE089C /* Wheaton App-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wheaton App-Prefix.pch"; sourceTree = "<group>"; };
@@ -96,16 +72,9 @@
 		2D26540213E069D000DE089C /* Wheaton AppTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wheaton AppTests-Prefix.pch"; sourceTree = "<group>"; };
 		2D26540313E069D000DE089C /* Wheaton_AppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Wheaton_AppTests.h; sourceTree = "<group>"; };
 		2D26540513E069D000DE089C /* Wheaton_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Wheaton_AppTests.m; sourceTree = "<group>"; };
-		2D26546E13E0AA7E00DE089C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		2DCEB34413E2010A00787E39 /* LinksList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = LinksList.plist; path = "Wheaton App.xcodeproj/LinksList.plist"; sourceTree = SOURCE_ROOT; };
-		47D7D882DD8EBCA04662A82E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		574EF7341C19019300E80B33 /* GSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeychain.h; sourceTree = "<group>"; };
-		574EF7351C19019300E80B33 /* GSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSKeychain.m; sourceTree = "<group>"; };
-		574EF7371C1901C800E80B33 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		61032B0B17F112B900CC95FA /* EventSingleLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventSingleLineView.xib; sourceTree = "<group>"; };
 		61032B0D17F1157B00CC95FA /* EventSubtitleLineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventSubtitleLineView.xib; sourceTree = "<group>"; };
-		61032B1817F3324200CC95FA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		61032B1A17F3325600CC95FA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		610D48D017DD591600DE574C /* EventsTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsTableCell.h; sourceTree = "<group>"; };
 		610D48D117DD591F00DE574C /* EventsTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsTableCell.m; sourceTree = "<group>"; };
 		610E251319D1CA8B009168AA /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -122,10 +91,7 @@
 		613CF94618D8D737005156A8 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		613CF94818D8D882005156A8 /* CourseRequirement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseRequirement.h; sourceTree = "<group>"; };
 		613CF94918D8D882005156A8 /* CourseRequirement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseRequirement.m; sourceTree = "<group>"; };
-		613CF99118DB79A3005156A8 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		613E6CF418E4BF5F00445FFE /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		6141152C18374F7E00B71051 /* PushNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushNotification.h; sourceTree = "<group>"; };
-		6141152D18374F7E00B71051 /* PushNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushNotification.m; sourceTree = "<group>"; };
 		6147B49218AD530F00110753 /* AutoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoTableViewCell.h; sourceTree = "<group>"; };
 		6147B49318AD531A00110753 /* AutoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoTableViewCell.m; sourceTree = "<group>"; };
 		615CA71B18DCE7E50002279F /* CustomTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewController.h; sourceTree = "<group>"; };
@@ -139,33 +105,21 @@
 		61851B3D18306762005EDE18 /* SportsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsTableViewController.m; sourceTree = "<group>"; };
 		61891CCF182C09EE003F1B43 /* MasterTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterTabViewController.h; sourceTree = "<group>"; };
 		61891CD0182C09EE003F1B43 /* MasterTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterTabViewController.m; sourceTree = "<group>"; };
-		61B04AF918B4605600CC509A /* NotificationOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationOptionsTableViewController.h; sourceTree = "<group>"; };
-		61B04AFA18B4605600CC509A /* NotificationOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationOptionsTableViewController.m; sourceTree = "<group>"; };
-		61B04AFC18B5C90C00CC509A /* BannerLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerLoginViewController.h; sourceTree = "<group>"; };
-		61B04AFD18B5C90C00CC509A /* BannerLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerLoginViewController.m; sourceTree = "<group>"; };
 		61B04B0618B8728800CC509A /* MetraTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MetraTableViewCell.h; sourceTree = "<group>"; };
 		61B04B0718B8728800CC509A /* MetraTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MetraTableViewCell.m; sourceTree = "<group>"; };
 		61B04B0818B8728800CC509A /* MetraTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MetraTableViewCell.xib; sourceTree = "<group>"; };
-		61B3FCB318E92A95009F58CD /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		61BCE1021885DFF600C7AB12 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		61BCE1031885E18600C7AB12 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		61C6193A18B29F8B00357869 /* UIImage_Scale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIImage_Scale.h; sourceTree = "<group>"; };
 		61CA40AC17CA702200617623 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
-		61CA40BB17CA798100617623 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		61CA40BD17CA799F00617623 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		61CA40C217CA8CBB00617623 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		61CA40C817CA94FA00617623 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		61CA40C917CA94FA00617623 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
-		61CA40CB17CA951F00617623 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		61CE5FC2188359D1007B66AB /* HomePastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePastViewController.h; sourceTree = "<group>"; };
 		61CE5FC3188359D1007B66AB /* HomePastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomePastViewController.m; sourceTree = "<group>"; };
 		61DDA64C18368F8B00EBA92C /* AcademicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcademicTableViewController.h; sourceTree = "<group>"; };
 		61DDA64E18368F9D00EBA92C /* AcademicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcademicTableViewController.m; sourceTree = "<group>"; };
 		61DE4FF9183020AA004BBCA1 /* CustomSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSegmentControl.h; sourceTree = "<group>"; };
 		61DE4FFA183020AA004BBCA1 /* CustomSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSegmentControl.m; sourceTree = "<group>"; };
-		61E075C717E6A7790029EFE9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		61E075CD17E6A9850029EFE9 /* MTReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTReachabilityManager.h; path = ../MTReachabilityManager.h; sourceTree = "<group>"; };
-		61E075CE17E6A9850029EFE9 /* MTReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTReachabilityManager.m; path = ../MTReachabilityManager.m; sourceTree = "<group>"; };
 		61E2E919187F236800E97AD7 /* WhosWhoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhosWhoDetailViewController.h; sourceTree = "<group>"; };
 		61E2E91A187F236800E97AD7 /* WhosWhoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhosWhoDetailViewController.m; sourceTree = "<group>"; };
 		61E4076E17CC5B7B0068AE00 /* EventTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventTableCell.h; sourceTree = "<group>"; };
@@ -183,7 +137,6 @@
 		61E7679218F4F67200E04D54 /* AccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTableViewCell.m; sourceTree = "<group>"; };
 		61E89E0F188F7C89002F6241 /* EventAutoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventAutoTableViewCell.h; sourceTree = "<group>"; };
 		61E89E10188F7C89002F6241 /* EventAutoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventAutoTableViewCell.m; sourceTree = "<group>"; };
-		61F05EDD17D3A4100006CC1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		61F6E4DC18E618E300E95093 /* CourseTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseTableCell.h; sourceTree = "<group>"; };
 		61F6E4DD18E618E300E95093 /* CourseTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseTableCell.m; sourceTree = "<group>"; };
 		61F6E4DE18E618E300E95093 /* CourseTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseTableCell.xib; sourceTree = "<group>"; };
@@ -202,12 +155,9 @@
 		61F70D911831F12700345907 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		6D2A5FD41B41F8CD00CD3285 /* chapelNEW.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = chapelNEW.pdf; sourceTree = "<group>"; };
 		6D2A5FD61B41F95900CD3285 /* Wheaton App-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Wheaton App-Bridging-Header.h"; sourceTree = "<group>"; };
-		6D43A2C01B645AF0007BD0F2 /* SWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWebViewController.swift; sourceTree = "<group>"; };
 		6DDED5F01B44B1B2002B03BC /* RecordArticlesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordArticlesViewController.swift; sourceTree = "<group>"; };
 		6DDED5F21B44B37A002B03BC /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
-		8488F3B27992B7FC65559241 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		CE368ECDC5DCD333A3D29340 /* Pods.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.distribution.xcconfig; path = "Pods/Target Support Files/Pods/Pods.distribution.xcconfig"; sourceTree = "<group>"; };
-		E273835E92EF424EA47D036B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CB62AD6150E31D48782E749 /* whoswho.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = whoswho.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,22 +165,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				574EF7381C1901C800E80B33 /* Security.framework in Frameworks */,
-				61B3FCB418E92A95009F58CD /* CoreBluetooth.framework in Frameworks */,
-				613CF99218DB79A3005156A8 /* EventKit.framework in Frameworks */,
-				61032B1B17F3325600CC95FA /* libz.dylib in Frameworks */,
-				61032B1917F3324200CC95FA /* CoreData.framework in Frameworks */,
-				61E075C817E6A7790029EFE9 /* SystemConfiguration.framework in Frameworks */,
-				61F05EDE17D3A4100006CC1F /* QuartzCore.framework in Frameworks */,
-				61CA40CC17CA952000617623 /* AddressBook.framework in Frameworks */,
-				61CA40C317CA8CBB00617623 /* Social.framework in Frameworks */,
-				61CA40BE17CA799F00617623 /* CoreLocation.framework in Frameworks */,
-				61CA40BC17CA798100617623 /* Twitter.framework in Frameworks */,
-				2D26546F13E0AA7E00DE089C /* MapKit.framework in Frameworks */,
-				2D2653DD13E069CF00DE089C /* UIKit.framework in Frameworks */,
-				2D2653DF13E069CF00DE089C /* Foundation.framework in Frameworks */,
-				2D2653E113E069CF00DE089C /* CoreGraphics.framework in Frameworks */,
-				CCF1BF0EAA79491DB3D20327 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +178,6 @@
 				2D2653FC13E069D000DE089C /* Wheaton AppTests */,
 				2D2653DB13E069CF00DE089C /* Frameworks */,
 				2D2653D913E069CF00DE089C /* Products */,
-				F5A62C627D748D24CECDE697 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -259,22 +192,6 @@
 		2D2653DB13E069CF00DE089C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				574EF7371C1901C800E80B33 /* Security.framework */,
-				61B3FCB318E92A95009F58CD /* CoreBluetooth.framework */,
-				613CF99118DB79A3005156A8 /* EventKit.framework */,
-				61032B1A17F3325600CC95FA /* libz.dylib */,
-				61032B1817F3324200CC95FA /* CoreData.framework */,
-				61E075C717E6A7790029EFE9 /* SystemConfiguration.framework */,
-				61F05EDD17D3A4100006CC1F /* QuartzCore.framework */,
-				61CA40CB17CA951F00617623 /* AddressBook.framework */,
-				61CA40C217CA8CBB00617623 /* Social.framework */,
-				61CA40BD17CA799F00617623 /* CoreLocation.framework */,
-				61CA40BB17CA798100617623 /* Twitter.framework */,
-				2D26546E13E0AA7E00DE089C /* MapKit.framework */,
-				2D2653DC13E069CF00DE089C /* UIKit.framework */,
-				2D2653DE13E069CF00DE089C /* Foundation.framework */,
-				2D2653E013E069CF00DE089C /* CoreGraphics.framework */,
-				E273835E92EF424EA47D036B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -302,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				6D2A5FD41B41F8CD00CD3285 /* chapelNEW.pdf */,
+				3CB62AD6150E31D48782E749 /* whoswho.json */,
 				613E6CF418E4BF5F00445FFE /* Media.xcassets */,
 				2DCEB34413E2010A00787E39 /* LinksList.plist */,
 				2D2653E413E069CF00DE089C /* Wheaton App-Info.plist */,
@@ -413,10 +331,6 @@
 		613E6CF018E4BED100445FFE /* Banner */ = {
 			isa = PBXGroup;
 			children = (
-				61B04AFC18B5C90C00CC509A /* BannerLoginViewController.h */,
-				61B04AFD18B5C90C00CC509A /* BannerLoginViewController.m */,
-				574EF7341C19019300E80B33 /* GSKeychain.h */,
-				574EF7351C19019300E80B33 /* GSKeychain.m */,
 			);
 			name = Banner;
 			sourceTree = "<group>";
@@ -441,7 +355,6 @@
 				615CA71C18DCE7E50002279F /* CustomTableViewController.m */,
 				616DD25A1852B4D300AC53C3 /* WebViewController.h */,
 				616DD25B1852B4D300AC53C3 /* WebViewController.m */,
-				6D43A2C01B645AF0007BD0F2 /* SWebViewController.swift */,
 			);
 			name = Generic;
 			sourceTree = "<group>";
@@ -451,8 +364,6 @@
 			children = (
 				61F70D841831924100345907 /* MoreTableViewController.h */,
 				61F70D851831924100345907 /* MoreTableViewController.m */,
-				61B04AF918B4605600CC509A /* NotificationOptionsTableViewController.h */,
-				61B04AFA18B4605600CC509A /* NotificationOptionsTableViewController.m */,
 				6DDED5F01B44B1B2002B03BC /* RecordArticlesViewController.swift */,
 				6DDED5F21B44B37A002B03BC /* XMLParser.swift */,
 			);
@@ -500,8 +411,6 @@
 		613E6CFA18E4C15F00445FFE /* Push */ = {
 			isa = PBXGroup;
 			children = (
-				6141152C18374F7E00B71051 /* PushNotification.h */,
-				6141152D18374F7E00B71051 /* PushNotification.m */,
 			);
 			name = Push;
 			sourceTree = "<group>";
@@ -517,7 +426,6 @@
 		61CA409C17CA6C6300617623 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				61CE5FC4188359D1007B66AB /* Pods */,
 				613E6CF218E4BF1100445FFE /* Generic */,
 				613E6CEE18E4BEB500445FFE /* Events */,
 				613E6CEF18E4BEC400445FFE /* Map */,
@@ -566,30 +474,11 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		61CE5FC4188359D1007B66AB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		61E075C917E6A88A0029EFE9 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				61E075CD17E6A9850029EFE9 /* MTReachabilityManager.h */,
-				61E075CE17E6A9850029EFE9 /* MTReachabilityManager.m */,
 			);
 			name = Reachability;
-			sourceTree = "<group>";
-		};
-		F5A62C627D748D24CECDE697 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8488F3B27992B7FC65559241 /* Pods.debug.xcconfig */,
-				47D7D882DD8EBCA04662A82E /* Pods.release.xcconfig */,
-				CE368ECDC5DCD333A3D29340 /* Pods.distribution.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,12 +488,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D26540913E069D000DE089C /* Build configuration list for PBXNativeTarget "Wheaton App" */;
 			buildPhases = (
-				26C3C3E424CC480BAB8B4B66 /* Check Pods Manifest.lock */,
 				2D2653D413E069CF00DE089C /* Sources */,
 				2D2653D513E069CF00DE089C /* Frameworks */,
 				2D2653D613E069CF00DE089C /* Resources */,
-				D6D45BB48F864478AA7FF89C /* Copy Pods Resources */,
-				44B6C943B4295B7D00A62AF0 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -625,7 +511,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					2D2653D713E069CF00DE089C = {
-						DevelopmentTeam = T7TBP7XHVC;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -656,6 +542,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E31BD61B6D4A864BC0723FF7 /* whoswho.json in Resources */,
 				6D2A5FD51B41F8CD00CD3285 /* chapelNEW.pdf in Resources */,
 				2D2653E713E069CF00DE089C /* InfoPlist.strings in Resources */,
 				577724801C3D89FD00DB6775 /* Media.xcassets in Resources */,
@@ -675,51 +562,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26C3C3E424CC480BAB8B4B66 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		44B6C943B4295B7D00A62AF0 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D6D45BB48F864478AA7FF89C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -734,12 +576,9 @@
 				61DE4FFB183020AA004BBCA1 /* CustomSegmentControl.m in Sources */,
 				61F70D921831F12700345907 /* Person.m in Sources */,
 				2D2653EA13E069CF00DE089C /* main.m in Sources */,
-				61E075CF17E6A9850029EFE9 /* MTReachabilityManager.m in Sources */,
 				61DDA64F18368F9D00EBA92C /* AcademicTableViewController.m in Sources */,
 				613CF94A18D8D882005156A8 /* CourseRequirement.m in Sources */,
-				6141152E18374F7E00B71051 /* PushNotification.m in Sources */,
 				61CE5FC5188359D1007B66AB /* HomePastViewController.m in Sources */,
-				574EF7361C19019300E80B33 /* GSKeychain.m in Sources */,
 				616DD25C1852B4D300AC53C3 /* WebViewController.m in Sources */,
 				61CA40CA17CA94FB00617623 /* Location.m in Sources */,
 				613961E718A870E600669034 /* MapDetailViewController.m in Sources */,
@@ -750,7 +589,6 @@
 				61E4077917CECE8B0068AE00 /* WhoswhoSearchBar.m in Sources */,
 				61F6E4DF18E618E300E95093 /* CourseTableCell.m in Sources */,
 				61F70D861831924100345907 /* MoreTableViewController.m in Sources */,
-				6D43A2C11B645AF0007BD0F2 /* SWebViewController.swift in Sources */,
 				61E4079917D2662D0068AE00 /* BannerScrollView.m in Sources */,
 				615CA71D18DCE7E50002279F /* CustomTableViewController.m in Sources */,
 				61E2E91B187F236800E97AD7 /* WhosWhoDetailViewController.m in Sources */,
@@ -759,7 +597,6 @@
 				61F70D7E18309AA000345907 /* SportTableCell.m in Sources */,
 				61E89E12188F7C89002F6241 /* EventAutoTableViewCell.m in Sources */,
 				610D48D217DD591F00DE574C /* EventsTableCell.m in Sources */,
-				61B04AFE18B5C90C00CC509A /* BannerLoginViewController.m in Sources */,
 				612BFEFD17DED11300EB2C8C /* AppDelegate.m in Sources */,
 				6DDED5F31B44B37A002B03BC /* XMLParser.swift in Sources */,
 				61F70D8F1831E03700345907 /* HomeViewController.m in Sources */,
@@ -767,7 +604,6 @@
 				613B9557183419C900DEAA0E /* EventsTableViewController.m in Sources */,
 				610E251519D1CA8B009168AA /* Utilities.m in Sources */,
 				61E7679318F4F67200E04D54 /* AccountTableViewCell.m in Sources */,
-				61B04AFB18B4605600CC509A /* NotificationOptionsTableViewController.m in Sources */,
 				6147B49418AD531A00110753 /* AutoTableViewCell.m in Sources */,
 				612BFF0417DEE71D00EB2C8C /* MapSearchBar.m in Sources */,
 				61BCE1041885E18600C7AB12 /* Constants.m in Sources */,
@@ -799,20 +635,15 @@
 		2D26540713E069D000DE089C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: John Hayward (5ST3Z235DD)";
+				SWIFT_VERSION = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "36CFBE60-0069-440C-BBA9-6746397C1150";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};
@@ -821,17 +652,12 @@
 		2D26540813E069D000DE089C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
+				SWIFT_VERSION = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};
@@ -839,16 +665,17 @@
 		};
 		2D26540A13E069D000DE089C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8488F3B27992B7FC65559241 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				SWIFT_VERSION = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -859,14 +686,12 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.wheaton.wcapp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.jackbandy.afterwheaton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				DEVELOPMENT_TEAM = "";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Wheaton App/Wheaton App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -877,16 +702,17 @@
 		};
 		2D26540B13E069D000DE089C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47D7D882DD8EBCA04662A82E /* Pods.release.xcconfig */;
 			buildSettings = {
+				SWIFT_VERSION = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -895,14 +721,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.wheaton.wcapp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.jackbandy.afterwheaton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				DEVELOPMENT_TEAM = "";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Wheaton App/Wheaton App-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -914,17 +738,12 @@
 		62AADA3913F983E7001BC0DA /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Developer: John Hayward (5ST3Z235DD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Terry Perciante";
+				SWIFT_VERSION = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "36CFBE60-0069-440C-BBA9-6746397C1150";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F38C1DD7-1E27-47CE-81FF-AB7A6D88A754";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 			};
@@ -932,16 +751,17 @@
 		};
 		62AADA3A13F983E7001BC0DA /* Distribution */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE368ECDC5DCD333A3D29340 /* Pods.distribution.xcconfig */;
 			buildSettings = {
+				SWIFT_VERSION = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = YES;
 				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -950,14 +770,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Wheaton App/Wheaton App-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Wheaton App/Wheaton App-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.wheaton.wcapp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.jackbandy.afterwheaton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				DEVELOPMENT_TEAM = "";
 				SKIP_INSTALL = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "Wheaton App/Wheaton App-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;

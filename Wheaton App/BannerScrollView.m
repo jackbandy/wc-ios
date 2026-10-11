@@ -63,7 +63,9 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSData *data = [NSData dataWithContentsOfURL: URL];
             if (data == nil) {
-                [self addImage:[UIImage imageNamed:@"banner1.png"] index:0];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self addImage:[UIImage imageNamed:@"banner1.png"] index:0];
+                });
             } else {
                 NSError *error;
                 NSArray *images = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
@@ -98,8 +100,6 @@
         vc.allowZoom = YES;
         vc.url = [NSURL URLWithString:url];
         
-        Mixpanel *mixpanel = [Mixpanel sharedInstance];
-        [mixpanel track:@"Viewed Ad" properties:@{ @"URL": url }];
         
         vc.title = @"Banner Ad";
         [parentController.navigationController

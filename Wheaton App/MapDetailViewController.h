@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "JCRBlurView.h"
 #import "Location.h"
 
 @interface MapDetailViewController : UITableViewController

@@ -5,6 +5,8 @@
 //  Created by Chris Anderson on 11/11/13.
 //
 //
+//  NOTICE: Modified by an LLM (Claude Code), 2026-10-11. See HomeViewController.h.
+//
 
 #import "HomeViewController.h"
 #import "WhosWhoDetailViewController.h"
@@ -17,37 +19,23 @@
 
 @end
 
-@implementation HomeViewController
+@implementation HomeViewController {
+    NSArray *directory;
+}
 
-@synthesize switchViewControllers, allViewControllers, currentViewController, viewContainer, searchResults;
+@synthesize switchViewControllers, allViewControllers, currentViewController, viewContainer, searchResults, searchBar, resultsTable;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.searchDisplayController.searchBar.placeholder = @"Who's Who";
-    self.searchDisplayController.searchBar.clipsToBounds = YES;
+    self.searchBar.placeholder = @"Who's Who";
+    self.searchBar.clipsToBounds = YES;
+    self.searchBar.delegate = self;
+    self.searchBar.searchTextField.textColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
-    searchTextField.textColor = [UIColor whiteColor];
-    CGRect tmpFrame = self.searchDisplayController.searchResultsTableView.frame;
-    self.searchDisplayController.searchResultsTableView.frame = CGRectMake(tmpFrame.origin.x, tmpFrame.origin.y, tmpFrame.size.width, self.view.frame.size.height);
-    
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"Opened Home" properties:@{}];
-    
-    [[MTReachabilityManager sharedManager] reachability].reachableBlock = ^(Reachability*reach) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self showWhosWho:YES];
-        });
-    };
-    [[MTReachabilityManager sharedManager] reachability].unreachableBlock = ^(Reachability*reach) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self showWhosWho:NO];
-        });
-    };
-    
+
     HomePastViewController *pVC = [self.storyboard instantiateViewControllerWithIdentifier:@"PastHome"];
     
     pVC.view.frame = CGRectMake(0,
@@ -65,7 +53,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self showWhosWho:[MTReachabilityManager isReachableViaWiFi]];
+    [self showWhosWho:YES];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 
 }
@@ -73,13 +61,8 @@
 
 - (void)showWhosWho:(BOOL)show
 {
-    if (show) {
-        [self.searchDisplayController.searchBar setUserInteractionEnabled:YES];
-        [self.searchDisplayController.searchBar setPlaceholder:@"Who's Who"];
-    } else {
-        [self.searchDisplayController.searchBar setUserInteractionEnabled:NO];
-        [self.searchDisplayController.searchBar setPlaceholder:@"Who's Who: Connect to Campus WiFi"];
-    }
+    [self.searchBar setUserInteractionEnabled:show];
+    [self.searchBar setPlaceholder:@"Who's Who"];
 }
 
 
@@ -91,96 +74,91 @@
 
 
 
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+#pragma mark - Search bar
+
+- (void)setResultsVisible:(BOOL)visible
 {
-    [LVDebounce fireAfter:0.5 target:self selector:@selector(performSearch:) userInfo:searchString];
-    return NO;
+    if (visible && !resultsTable) {
+        resultsTable = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        resultsTable.translatesAutoresizingMaskIntoConstraints = NO;
+        resultsTable.dataSource = self;
+        resultsTable.delegate = self;
+        resultsTable.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+        [self.view addSubview:resultsTable];
+        [NSLayoutConstraint activateConstraints:@[
+            [resultsTable.topAnchor constraintEqualToAnchor:self.searchBar.bottomAnchor],
+            [resultsTable.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+            [resultsTable.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+            [resultsTable.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+        ]];
+    }
+    resultsTable.hidden = !visible;
+    [self.searchBar setShowsCancelButton:visible animated:YES];
 }
 
-- (void)performSearch:(NSTimer *)timer
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)bar
 {
-    
-    NSLog(@"Perform Search");
-    
-    //[searchResults removeAllObjects];
-    //[self.searchDisplayController.searchResultsTableView reloadData];
-    NSString *searchString = [timer userInfo];
-    
-    if(![searchString isEqualToString:@""]){
-        
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        
-        NSDictionary *parameters = @{ @"q": searchString, @"page_size":@"20", };
-        [manager GET:c_Whoswho parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(@"RESPONSE: %@",[responseObject objectForKey:@"page"] );
-            //if([[responseObject objectForKey:@"page"] isEqualToString:@"0"]){
-            NSArray *resultsArray = [responseObject objectForKey:@"search_results"];
-            NSArray *sortedArray = [resultsArray sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-                return [[obj1 valueForKey:@"FirstName"] compare:[obj2 valueForKey:@"FirstName"]];
-            }];
-            
-            searchResults = [[NSMutableArray alloc] initWithCapacity:sortedArray.count];
-            
-            for (NSDictionary* dic in sortedArray) {
-                //NSDictionary *name = [dic objectForKey:@"name"];
-                if([[dic objectForKey:@"Type"] isEqualToString:@"2"]){
-                    Person *person = [[Person alloc] init];
-                    person.firstName = [dic objectForKey:@"FirstName"];
-                    person.prefName = [dic objectForKey:@"PrefFirstName"];
-                    person.lastName = [dic objectForKey:@"LastName"];
-                    person.email = [dic objectForKey:@"Email"];
-                    //person.uid = [dic objectForKey:@"IdCardNum"];
-                    
-                    person.classification = @"N/A";
-                    if (![[dic objectForKey:@"Classification"] isEqual:[NSNull null]]) {
-                        person.classification = [dic objectForKey:@"Classification"];
-                    }
-                    
-                    person.cpo = @"N/A";
-                    if (![[dic objectForKey:@"CPOBox"] isEqual:[NSNull null]]) {
-                        person.cpo = [dic objectForKey:@"CPOBox"];
-                    }
-                    person.photo =  [dic objectForKey:@"PhotoUrl"];
-                    [searchResults addObject:person];
-                }
-            }
-            
-            [self.searchDisplayController.searchResultsTableView reloadData];
-            
-            //}
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
+    [self setResultsVisible:YES];
+}
+
+- (void)searchBar:(UISearchBar *)bar textDidChange:(NSString *)searchText
+{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(performSearch:) object:nil];
+    [self performSelector:@selector(performSearch:) withObject:searchText afterDelay:0.2];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)bar
+{
+    [bar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)bar
+{
+    bar.text = @"";
+    [bar resignFirstResponder];
+    [searchResults removeAllObjects];
+    [resultsTable reloadData];
+    [self setResultsVisible:NO];
+}
+
+- (NSArray *)directory
+{
+    if (!directory) {
+        NSMutableArray *people = [[NSMutableArray alloc] init];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"whoswho" ofType:@"json"];
+        NSData *data = path ? [NSData dataWithContentsOfFile:path] : nil;
+        NSArray *records = data ? [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil] : nil;
+        for (NSDictionary *dic in ([records isKindOfClass:[NSArray class]] ? records : @[])) {
+            Person *person = [[Person alloc] init];
+            person.firstName = dic[@"firstName"] ?: @"";
+            person.lastName = dic[@"lastName"] ?: @"";
+            person.group = dic[@"group"];
+            person.title = dic[@"title"];
+            person.sourceUrl = dic[@"sourceUrl"];
+            person.photo = dic[@"photo"];
+            person.uid = [NSString stringWithFormat:@"%@|%@|%@", person.firstName, person.lastName, person.group];
+            [people addObject:person];
+        }
+        directory = [people sortedArrayUsingComparator:^NSComparisonResult(Person *a, Person *b) {
+            return [[a fullName] caseInsensitiveCompare:[b fullName]];
         }];
     }
-    
+    return directory;
 }
 
-
-
-
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller didHideSearchResultsTableView:(UITableView *)tableView
+- (void)performSearch:(NSString *)searchString
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
-    
-    [searchResults removeAllObjects];
-    [self.searchDisplayController.searchResultsTableView reloadData];
-}
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
-}
-
-- (void) keyboardWillHide
-{
-    CGRect tmpFrame = self.searchDisplayController.searchResultsTableView.frame;
-    self.searchDisplayController.searchResultsTableView.frame = CGRectMake(tmpFrame.origin.x, tmpFrame.origin.y, tmpFrame.size.width, self.view.frame.size.height);
-    [self.searchDisplayController.searchResultsTableView setShowsVerticalScrollIndicator:NO];
-
-    //[tableView setContentInset:UIEdgeInsetsZero];
-    //[tableView setScrollIndicatorInsets:UIEdgeInsetsZero];
-    
+    NSString *query = [searchString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    searchResults = [[NSMutableArray alloc] init];
+    if (query.length > 0) {
+        for (Person *person in [self directory]) {
+            NSString *haystack = [NSString stringWithFormat:@"%@ %@ %@", [person fullName], person.title ?: @"", person.group ?: @""];
+            if ([haystack rangeOfString:query options:NSCaseInsensitiveSearch | NSDiacriticInsensitiveSearch].location != NSNotFound) {
+                [searchResults addObject:person];
+            }
+        }
+    }
+    [resultsTable reloadData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -204,23 +182,14 @@
     cell.firstName.text = [NSString stringWithFormat:@"%@", [person fullName]];
     
     NSString *imagename = person.photo;
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imagename]
-                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                         timeoutInterval:60.0];
-    
-    [cell.profileImage setImageWithURLRequest:request
-                             placeholderImage:[UIImage imageNamed:@"default-image"]
-                                      success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                          cell.profileImage.image = image;
-                                      }
-                                      failure:nil];
+    [Utilities loadImageAtURL:imagename intoImageView:cell.profileImage placeholder:[UIImage imageNamed:@"default-image"]];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (tableView == self.searchDisplayController.searchResultsTableView) {
+    if (tableView == resultsTable) {
         Person *selectedPerson = (Person *)[self.searchResults objectAtIndex:indexPath.row];
         
         WhosWhoDetailViewController *detail = [self.storyboard instantiateViewControllerWithIdentifier:@"WhosWhoDetail"];

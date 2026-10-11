@@ -12,7 +12,7 @@
 NSString * const c_Home = @"http://mobileapps.wheaton.edu/api/home";
 NSString * const c_MapLocations = @"http://mobileapps.wheaton.edu/api/locations";
 NSString * const c_Chapel = @"http://mobileapps.wheaton.edu/api/chapel";
-NSString * const c_Menu = @"http://mobileapps.wheaton.edu/api/menu";
+NSString * const c_Menu = @"https://wheaton.cafebonappetit.com/cafe/anderson-commons/";
 //NSString * const c_Whoswho = @"https://isoncamp.us/wheaton/person";
 NSString * const c_Whoswho = @"https://intra.wheaton.edu/whoswho/person/searchJson";
 NSString * const c_Sports = @"http://mobileapps.wheaton.edu/api/sports";

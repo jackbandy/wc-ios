@@ -18,6 +18,9 @@
 @property NSString *photo;
 @property NSString *cpo;
 @property NSString *uid;
+@property NSString *group;
+@property NSString *title;
+@property NSString *sourceUrl;
 
 - (NSString *)fullName;
 - (NSString *)fullNameWithPref;

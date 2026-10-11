@@ -23,13 +23,15 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.dateLabel = [UILabel newAutoLayoutView];
+        self.dateLabel = [[UILabel alloc] init];
+        self.dateLabel.translatesAutoresizingMaskIntoConstraints = NO;
         [self.dateLabel setLineBreakMode:NSLineBreakByTruncatingTail];
         [self.dateLabel setNumberOfLines:1];
         [self.dateLabel setTextAlignment:NSTextAlignmentLeft];
         [self.dateLabel setTextColor:[UIColor blackColor]];
         
-        self.bodyLabel = [UILabel newAutoLayoutView];
+        self.bodyLabel = [[UILabel alloc] init];
+        self.bodyLabel.translatesAutoresizingMaskIntoConstraints = NO;
         [self.bodyLabel setLineBreakMode:NSLineBreakByTruncatingTail];
         [self.bodyLabel setNumberOfLines:0];
         [self.bodyLabel setTextAlignment:NSTextAlignmentLeft];
@@ -57,15 +59,15 @@
     // self.contentView.bounds = CGRectMake(0.0f, 0.0f, 99999.0f, 99999.0f);
     
     [self.dateLabel setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-    [self.dateLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:kLabelVerticalInsets];
-    [self.dateLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:kLabelHorizontalInsets];
-    [self.dateLabel autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:kLabelHorizontalInsets];
+    [self.dateLabel.topAnchor constraintEqualToAnchor:self.dateLabel.superview.topAnchor constant:kLabelVerticalInsets].active = YES;
+    [self.dateLabel.leadingAnchor constraintEqualToAnchor:self.dateLabel.superview.leadingAnchor constant:kLabelHorizontalInsets].active = YES;
+    [self.dateLabel.trailingAnchor constraintEqualToAnchor:self.dateLabel.superview.trailingAnchor constant:-kLabelHorizontalInsets].active = YES;
     
     [self.bodyLabel setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisVertical];
-    [self.bodyLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.dateLabel withOffset:0.0f];
-    [self.bodyLabel autoPinEdgeToSuperviewEdge:ALEdgeLeading withInset:kLabelHorizontalInsets];
-    [self.bodyLabel autoPinEdgeToSuperviewEdge:ALEdgeTrailing withInset:kLabelHorizontalInsets];
-    [self.bodyLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:kLabelVerticalInsets];
+    [self.bodyLabel.topAnchor constraintEqualToAnchor:self.dateLabel.bottomAnchor constant:0.0f].active = YES;
+    [self.bodyLabel.leadingAnchor constraintEqualToAnchor:self.bodyLabel.superview.leadingAnchor constant:kLabelHorizontalInsets].active = YES;
+    [self.bodyLabel.trailingAnchor constraintEqualToAnchor:self.bodyLabel.superview.trailingAnchor constant:-kLabelHorizontalInsets].active = YES;
+    [self.bodyLabel.bottomAnchor constraintEqualToAnchor:self.bodyLabel.superview.bottomAnchor constant:-kLabelVerticalInsets].active = YES;
     
     self.didSetupConstraints = YES;
 }

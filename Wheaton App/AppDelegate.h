@@ -5,17 +5,16 @@
 //  Created by Chris Anderson on 3/13/13.
 //  Copyright (c) 2013 Chris Anderson. All rights reserved.
 //
+//  NOTICE: Substantially modified by an LLM (Claude Code), 2026-10-11:
+//  removed Mixpanel, push notifications, and reachability for After Wheaton.
+//
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
-#import "Wheaton_App-Swift.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, MixpanelDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) Mixpanel *mixpanel;
-
-void uncaughtExceptionHandler(NSException *exception);
 
 @end

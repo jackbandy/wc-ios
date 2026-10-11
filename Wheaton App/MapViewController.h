@@ -10,14 +10,15 @@
 #import <MapKit/MapKit.h>
 #import "Constants.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate> {
+@interface MapViewController : UIViewController <MKMapViewDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource> {
     NSArray *searchResults;
     BOOL barHidden;
 }
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) NSMutableArray *locations;
-@property (strong, nonatomic) UISearchDisplayController *searchController;
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) UITableView *resultsTable;
 
 - (IBAction)resetMap:(id)sender;
 - (void)tapped;

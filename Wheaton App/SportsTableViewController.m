@@ -32,8 +32,6 @@
     
     [self loadSports];
     
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"Opened Sports" properties:@{}];
 }
 
 - (void)loadSports

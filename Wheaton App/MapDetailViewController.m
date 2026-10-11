@@ -7,8 +7,6 @@
 //
 
 #import "MapDetailViewController.h"
-#import "AFNetworking.h"
-#import "UIImageView+AFNetworking.h"
 #import "AutoTableViewCell.h"
 
 @interface MapDetailViewController ()
@@ -17,7 +15,7 @@
 
 @implementation MapDetailViewController
 {
-    JCRBlurView *blurView;
+    UIVisualEffectView *blurView;
 }
 
 static NSString *cellIdentifier = @"AutoTableViewCell";
@@ -25,16 +23,7 @@ static NSString *cellIdentifier = @"AutoTableViewCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.building.image]
-                                             cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                         timeoutInterval:60.0];
-    
-    [self.buildingImage setImageWithURLRequest:request
-                              placeholderImage:[UIImage imageNamed:@"building-default"]
-                                       success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-                                           self.buildingImage.image = image;
-                                       }
-                                       failure:nil];
+    [Utilities loadImageAtURL:self.building.image intoImageView:self.buildingImage placeholder:[UIImage imageNamed:@"building-default"]];
     
     
     self.name.text = self.building.title;
@@ -68,7 +57,7 @@ static NSString *cellIdentifier = @"AutoTableViewCell";
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
     @try {
-        blurView = [JCRBlurView new];
+        blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemMaterial]];
         [blurView setFrame:CGRectMake(0,
                                            self.bottomBlur.frame.origin.y,
                                            self.view.frame.size.width,

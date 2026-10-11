@@ -4,85 +4,50 @@
 //
 //  Created by Jack Work on 7/1/15.
 //
-//  Cloned from Gabriel Theodoropoulos on 17/9/14.
-//  Copyright (c) 2014 Appcoda. All rights reserved.
+//  NOTICE: Ported to Swift 5 by an LLM (Claude Code), 2026-10-11. The class was
+//  renamed to RSSFeedParser because Foundation now ships its own XMLParser.
 //
 
+import Foundation
 
-import UIKit
+class RSSFeedParser: NSObject, XMLParserDelegate {
 
-@objc protocol XMLParserDelegate{
-    func parsingWasFinished()
-}
+    var arrParsedData = [[String: String]]()
 
-class XMLParser: NSObject, NSXMLParserDelegate {
-    
-    var arrParsedData = [Dictionary<String, String>]()
-    
-    var currentDataDictionary = Dictionary<String, String>()
-    
-    var currentElement = ""
-    
-    var foundCharacters = ""
-    
-    var delegate : XMLParserDelegate?
-    
-    
-    func startParsingWithContentsOfURL(rssURL: NSURL) {
-        let parser = NSXMLParser(contentsOfURL: rssURL)!
+    private var currentDataDictionary = [String: String]()
+    private var currentElement = ""
+    private var foundCharacters = ""
+
+    func startParsingWithContentsOfURL(_ rssURL: URL) {
+        guard let parser = XMLParser(contentsOf: rssURL) else { return }
         parser.delegate = self
         parser.parse()
     }
-    
-    
-    
-    //MARK: NSXMLParserDelegate method implementation
-    
-    func parserDidEndDocument(parser: NSXMLParser) {
-        delegate?.parsingWasFinished()
-    }
-    
-    
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        currentElement = elementName
 
+    // MARK: XMLParserDelegate
+
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]) {
+        currentElement = elementName
     }
-    
-    
-    
-    
-    func parser(parser: NSXMLParser, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
-        if !foundCharacters.isEmpty {
-            
-            if elementName == "link"{
-                foundCharacters = (foundCharacters as NSString).substringFromIndex(3)
-            }
-            
-            currentDataDictionary[currentElement] = foundCharacters
-            
+
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        let value = foundCharacters.trimmingCharacters(in: .whitespacesAndNewlines)
+        if !value.isEmpty {
+            currentDataDictionary[currentElement] = value
             foundCharacters = ""
-            
             if currentElement == "pubDate" {
                 arrParsedData.append(currentDataDictionary)
             }
         }
     }
-    
-    
-    func parser(parser: NSXMLParser, foundCharacters string: String!) {
-        if (currentElement == "title" && currentElement != "Appcoda") || currentElement == "link" || currentElement == "pubDate"{
+
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        if currentElement == "title" || currentElement == "link" || currentElement == "pubDate" {
             foundCharacters += string
         }
     }
-    
-    
-    func parser(parser: NSXMLParser, parseErrorOccurred parseError: NSError!) {
-        print(parseError.description)
+
+    func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
+        print(parseError)
     }
-    
-    
-    func parser(parser: NSXMLParser, validationErrorOccurred validationError: NSError!) {
-        print(validationError.description)
-    }
-    
 }

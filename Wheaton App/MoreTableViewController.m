@@ -79,34 +79,8 @@
     
     
     
-    if ([Utilities enabledNotifications]) {
-        NSMutableDictionary *notificationOption = [[NSMutableDictionary alloc] init];
-        UIViewController *nVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NotificationOptions"];
-        nVC.title = @"Notification Toggles";
-        [notificationOption setValue:nVC forKey:@"controller"];
-        [notificationOption setValue:@"Notification Toggles" forKey:@"name"];
-        [optionsArray addObject:notificationOption];
-    }
-    
     [optionsDictionary setObject:optionsArray forKey:@"array"];
     [moreTable addObject:optionsDictionary];
-    
-    if ([Utilities enabledNotifications]) {
-        NSMutableDictionary *bannerDictionary = [[NSMutableDictionary alloc] init];
-        NSMutableArray *bannerArray = [[NSMutableArray alloc] init];
-        
-        [bannerDictionary setObject:@"Banner" forKey:@"header"];
-        
-        NSMutableDictionary *bannerOption = [[NSMutableDictionary alloc] init];
-        UIViewController *bVC = [self.storyboard instantiateViewControllerWithIdentifier:@"BannerLogin"];
-        [bannerOption setValue:@"Login" forKey:@"name"];
-        [bannerOption setValue:bVC forKey:@"controller"];
-        [bannerArray addObject:bannerOption];
-        
-        
-        [bannerDictionary setObject:bannerArray forKey:@"array"];
-        [moreTable addObject:bannerDictionary];
-    }
     
     NSMutableDictionary *endDictionary = [[NSMutableDictionary alloc] init];
     NSMutableArray *endArray = [[NSMutableArray alloc] init];
@@ -194,8 +168,6 @@
 - (void)handleSwipeRight:(id)swipe
 {
     CGFloat yVal = [swipe locationInView:self.view].y - 80.0;
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"Tor Touch" properties:@{}];
     
     NSLog(@"Right");
     tor = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TorTouch"]];
@@ -218,8 +190,6 @@
 - (void)handleSwipeLeft:(id)swipe
 {
     CGFloat yVal = [swipe locationInView:self.view].y - 80.0;
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"Tor Touch" properties:@{}];
     
     NSLog(@"Left");
     tor = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"TorTouch"]];

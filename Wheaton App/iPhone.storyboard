@@ -80,20 +80,11 @@
                     <tabBarItem key="tabBarItem" title="Home" image="House.png" id="EPA-YY-fKr"/>
                     <navigationItem key="navigationItem" title="Home" id="pc3-1Z-uBZ"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="sXz-hY-mUe" id="BtM-dL-ndi"/>
+                        <outlet property="searchBar" destination="giX-iX-TMH" id="awH-sB-001"/>
                         <outlet property="viewContainer" destination="jS6-fH-S0v" id="XGf-0E-tQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wJG-Hf-Mhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="sXz-hY-mUe">
-                    <connections>
-                        <outlet property="delegate" destination="z4V-p7-EP0" id="q7D-KM-sgy"/>
-                        <outlet property="searchBar" destination="giX-iX-TMH" id="w6T-lS-0TO"/>
-                        <outlet property="searchContentsController" destination="z4V-p7-EP0" id="98f-nL-9D4"/>
-                        <outlet property="searchResultsDataSource" destination="z4V-p7-EP0" id="LQ4-vN-RAt"/>
-                        <outlet property="searchResultsDelegate" destination="z4V-p7-EP0" id="qaU-AW-xZw"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-1220" y="2156"/>
         </scene>
@@ -283,20 +274,11 @@
                     <tabBarItem key="tabBarItem" title="Events" image="Calendar.png" id="hdM-A5-lKA"/>
                     <navigationItem key="navigationItem" title="Events" id="yTz-Es-w2B"/>
                     <connections>
-                        <outlet property="searchDisplayController" destination="0mi-Bv-7Xw" id="S8h-ib-Zgd"/>
                         <outlet property="switchViewControllers" destination="LL8-cA-Blq" id="wBd-EM-NY0"/>
                         <outlet property="viewContainer" destination="UPj-mJ-Frz" id="geI-TA-Cm9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpT-Jw-JGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="0mi-Bv-7Xw">
-                    <connections>
-                        <outlet property="delegate" destination="5Jx-P3-YG7" id="QBK-yI-oOX"/>
-                        <outlet property="searchContentsController" destination="5Jx-P3-YG7" id="Cre-yC-87V"/>
-                        <outlet property="searchResultsDataSource" destination="5Jx-P3-YG7" id="MHd-NG-8Qc"/>
-                        <outlet property="searchResultsDelegate" destination="5Jx-P3-YG7" id="vIU-eu-POZ"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-1220" y="3543"/>
         </scene>
@@ -416,15 +398,14 @@
                                     <navigationItem title="Menu" id="55r-5c-pLm"/>
                                 </items>
                             </navigationBar>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVv-Da-DEV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVv-Da-DEV">
                                 <rect key="frame" x="0.0" y="84" width="320" height="347"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outlet property="delegate" destination="fxO-nc-1pv" id="ttP-vz-N6M"/>
                                     <outletCollection property="gestureRecognizers" destination="mge-lL-XAt" appends="YES" id="qAT-SX-bGf"/>
                                 </connections>
-                            </webView>
+                            </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Cke-j3-Uuw">
                                 <rect key="frame" x="284" y="52" width="20" height="44"/>
                             </activityIndicatorView>
@@ -537,13 +518,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJt-gV-uie">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IJt-gV-uie">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="3SJ-PI-y4a" id="ps6-Gf-bcE"/>
-                                </connections>
-                            </webView>
+                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0er-o1-Ag3">
                                 <rect key="frame" x="150" y="40" width="20" height="20"/>
                             </activityIndicatorView>
@@ -622,20 +600,11 @@
                     <navigationItem key="navigationItem" id="h3o-4z-17c"/>
                     <connections>
                         <outlet property="mapView" destination="3pD-e9-Xt7" id="7dP-EM-TVB"/>
-                        <outlet property="searchDisplayController" destination="HYh-NW-dMs" id="Vri-hU-XLS"/>
+                        <outlet property="searchBar" destination="ArX-mf-uzK" id="awM-sB-002"/>
                         <segue destination="J8Y-zh-0PM" kind="push" identifier="MapDetailView" id="H4j-nE-OaX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MKO-vM-dw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="HYh-NW-dMs">
-                    <connections>
-                        <outlet property="delegate" destination="I9i-a1-JXq" id="gAa-gJ-NAx"/>
-                        <outlet property="searchBar" destination="ArX-mf-uzK" id="dF7-7t-keW"/>
-                        <outlet property="searchContentsController" destination="I9i-a1-JXq" id="7L0-bi-U0Z"/>
-                        <outlet property="searchResultsDataSource" destination="I9i-a1-JXq" id="ySD-C9-8tI"/>
-                        <outlet property="searchResultsDelegate" destination="I9i-a1-JXq" id="jSE-WE-FD4"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-1220" y="2849"/>
         </scene>
@@ -778,13 +747,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSj-Rk-AVi">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSj-Rk-AVi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="2SK-Ur-VNq" id="P4V-gd-aLE"/>
-                                </connections>
-                            </webView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>

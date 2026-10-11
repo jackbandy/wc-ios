@@ -17,7 +17,7 @@
     CLLocationManager *locationManager;
 }
 
-@synthesize locations, searchController;
+@synthesize locations, searchBar, resultsTable;
 
 
 - (void)viewDidLoad
@@ -26,8 +26,8 @@
     
     barHidden = NO;
     
-    UITextView *searchTextField = [self.searchDisplayController.searchBar valueForKey:@"_searchField"];
-    searchTextField.textColor = [UIColor whiteColor];
+    self.searchBar.delegate = self;
+    self.searchBar.searchTextField.textColor = [UIColor whiteColor];
     
     locationManager = [[CLLocationManager alloc] init];
     //[locationManager requestWhenInUseAuthorization];
@@ -42,8 +42,6 @@
     
     [self loadLocations];
     
-    Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"Opened Map" properties:@{}];
     
     [self resetMap:NULL];
 }
@@ -155,7 +153,7 @@
     Location *annotation = (Location *)[searchResults objectAtIndex:indexPath.row];
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotation:annotation];
-    [self.searchDisplayController setActive:NO];
+    [self searchBarCancelButtonClicked:self.searchBar];
     
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 0.075*METERS_PER_MILE, 0.075*METERS_PER_MILE);
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
@@ -212,40 +210,51 @@
     searchResults = [locations filteredArrayUsingPredicate:resultPredicate];
 }
 
-#pragma mark - UISearchDisplayController delegate methods
-- (BOOL)searchDisplayController:(UISearchDisplayController *)controller
-shouldReloadTableForSearchString:(NSString *)searchString
+#pragma mark - Search bar
+
+- (void)setResultsVisible:(BOOL)visible
 {
-    [self filterContentForSearchText:searchString
-                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
-                                      objectAtIndex:[self.searchDisplayController.searchBar
-                                                     selectedScopeButtonIndex]]];
-    
-    return YES;
+    if (visible && !resultsTable) {
+        resultsTable = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        resultsTable.translatesAutoresizingMaskIntoConstraints = NO;
+        resultsTable.dataSource = self;
+        resultsTable.delegate = self;
+        resultsTable.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+        [self.view addSubview:resultsTable];
+        [NSLayoutConstraint activateConstraints:@[
+            [resultsTable.topAnchor constraintEqualToAnchor:self.searchBar.bottomAnchor],
+            [resultsTable.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+            [resultsTable.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+            [resultsTable.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+        ]];
+    }
+    resultsTable.hidden = !visible;
+    [self.searchBar setShowsCancelButton:visible animated:YES];
 }
 
-
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller didHideSearchResultsTableView:(UITableView *)tableView
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)bar
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+    [self setResultsVisible:YES];
 }
 
-
-
-- (void)searchDisplayController:(UISearchDisplayController *)controller willShowSearchResultsTableView:(UITableView *)tableView
+- (void)searchBar:(UISearchBar *)bar textDidChange:(NSString *)searchText
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide) name:UIKeyboardWillHideNotification object:nil];
-    
+    [self filterContentForSearchText:searchText scope:nil];
+    [resultsTable reloadData];
 }
 
-- (void)keyboardWillHide
+- (void)searchBarSearchButtonClicked:(UISearchBar *)bar
 {
-    UITableView *tableView = [[self searchDisplayController] searchResultsTableView];
-    
-    [tableView setContentInset:UIEdgeInsetsZero];
-    [tableView setScrollIndicatorInsets:UIEdgeInsetsZero];
-    
+    [bar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)bar
+{
+    bar.text = @"";
+    [bar resignFirstResponder];
+    searchResults = @[];
+    [resultsTable reloadData];
+    [self setResultsVisible:NO];
 }
 
 - (void)viewDidUnload {

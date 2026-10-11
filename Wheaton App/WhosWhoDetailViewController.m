@@ -15,9 +15,8 @@
 @implementation WhosWhoDetailViewController {
     UIImageView *imageHolder;
     UIBarButtonItem *winkButton;
-    Mixpanel *mixpanel;
     
-    JCRBlurView *blurView;
+    UIVisualEffectView *blurView;
 }
 
 - (void)viewDidLoad
@@ -25,13 +24,12 @@
     [super viewDidLoad];
     
     self.name.text = [self.person fullNameWithPref];
-    self.email.text = self.person.email;
-    self.classification.text = self.person.classification;
-    self.cpo.text = [NSString stringWithFormat:@"CPO: %@", self.person.cpo];
+    self.email.text = self.person.title;
+    self.classification.text = self.person.group;
+    self.cpo.text = self.person.sourceUrl.length ? [NSString stringWithFormat:@"Source: %@", [NSURL URLWithString:self.person.sourceUrl].host] : @"";
     
     self.profileImage.contentMode = UIViewContentModeTop;
     
-    mixpanel = [Mixpanel sharedInstance];
     
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
@@ -47,7 +45,7 @@
     
     @try {
         if (!blurView) {
-            blurView = [JCRBlurView new];
+            blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemMaterial]];
             [blurView setFrame:CGRectMake(0,
                                           self.view.frame.size.height-150,
                                           self.view.frame.size.width,
@@ -64,7 +62,6 @@
 {
     [super viewDidAppear:NO];
     
-    [mixpanel track:@"Whos Who" properties:@{ @"query": self.person.fullName }];
     
     NSString *imagename = self.person.photo;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -88,7 +85,6 @@
 {
     if (sender.state == UIGestureRecognizerStateRecognized) {
             [self alertMessage:@"Sad face" message:@"No winking right now" button:@"Ok"];
-            [mixpanel track:@"Wink Attempted" properties:@{}];
     }
 }
 
@@ -150,7 +146,6 @@
     } else {
         if ([favorites count] < 10) {
             [favorites addObject:self.person.uid];
-            [mixpanel track:@"Wink" properties:@{ @"student": self.person.fullName }];
         } else {
             [self alertMessage:@"Wink" message:@"There is a limit to the number of winks you can use." button:@"Darn it"];
         }
@@ -158,16 +153,6 @@
     
     [prefs setObject:favorites forKey:@"favorites"];
     [prefs synchronize];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{
-                                 @"uuid": [[NSUserDefaults standardUserDefaults] objectForKey:@"uuid"],
-                                 @"token": [[NSUserDefaults standardUserDefaults] objectForKey:@"token"],
-                                 @"favorites":favorites
-                                 };
-    
-    [manager POST:c_Favorites parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {}
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) { NSLog(@"COULD NOT SAVE"); }];
 }
 
 - (BOOL)inFavorites
